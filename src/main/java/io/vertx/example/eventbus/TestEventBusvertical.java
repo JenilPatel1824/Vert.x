@@ -6,7 +6,10 @@ import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.json.Json;
+import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonObject;
+
+
 
 public class TestEventBusvertical extends AbstractVerticle {
 
@@ -32,6 +35,19 @@ public class TestEventBusvertical extends AbstractVerticle {
             System.out.println("received message by cons 2 ");
             System.out.println(message.body());
         });
+
+
+        Buffer buff = Buffer.buffer();
+        buff.appendString("Hello from publisher");
+        buff.appendInt(5000);
+        buff.appendString("Hello from publisher");
+
+        System.out.println("buff: "+buff.getString(0,20));
+        System.out.println("buff: "+buff.getInt(20));
+        System.out.println("buff: "+buff.getString(24,buff.length()));
+
+
+
 
         System.out.println("cons 1 and 2 "+firstConsumer+" "+secondConsumer);
 
