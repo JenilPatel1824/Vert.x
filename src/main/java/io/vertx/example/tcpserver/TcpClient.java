@@ -14,7 +14,6 @@ public class TcpClient extends AbstractVerticle {
             if (ar.succeeded()) {
                 NetSocket socket = ar.result();
 
-                System.out.println("enter messge to send");
                 socket.write("hello from client req:");
                 socket.sendFile("/home/jenil/Documents/Vertx/src/main/resources/my_file.txt");
                 socket.handler(buff -> {

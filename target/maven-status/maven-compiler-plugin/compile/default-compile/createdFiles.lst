@@ -1,9 +1,11 @@
 io/vertx/example/vertxcore.class
 io/vertx/example/eventbus/TestEventBusvertical.class
+io/vertx/example/router/HttpserverRouter.class
 io/vertx/example/RouterPractice.class
 io/vertx/example/future/FuturePromise.class
 io/vertx/example/eventbus/RequestSender2.class
 io/vertx/example/tcpserver/TcpServer.class
+io/vertx/example/router/RouterWithSession.class
 io/vertx/example/MainVerticle.class
 io/vertx/example/worker/WorkerVerticle.class
 io/vertx/example/eventbus/EventBusreciver.class

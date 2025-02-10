@@ -8,6 +8,8 @@ public class FutureCompositionExample extends AbstractVerticle {
 
     @Override
     public void start() {
+
+
         // Start the chain of futures
         fetchDataFromDatabase()
                 .compose(data -> {
@@ -66,7 +68,7 @@ public class FutureCompositionExample extends AbstractVerticle {
         // Simulate an async operation (e.g., saving data to DB)
         vertx.setTimer(1000, id -> {
             // Simulate successful save operation
-            System.out.println(data);
+           // System.out.println(data);
             promise.complete();
         });
 
