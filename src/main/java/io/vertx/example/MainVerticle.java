@@ -66,7 +66,7 @@ public class MainVerticle extends AbstractVerticle
 
         System.out.println(Thread.currentThread().getName()+" Main called");
 
-        Vertx vertx = Vertx.vertx(new VertxOptions().setBlockedThreadCheckInterval(1000).setWorkerPoolSize(1));
+        Vertx vertx = Vertx.vertx(new VertxOptions().setBlockedThreadCheckInterval(1000).setWorkerPoolSize(3));
 
 
         System.out.println(new VertxOptions().getBlockedThreadCheckInterval());
@@ -263,6 +263,9 @@ public class MainVerticle extends AbstractVerticle
 //        vertx.deployVerticle(new HttpClientExample());
 //
 //        vertx.deployVerticle(new HttpClientExample());
-        vertx.deployVerticle(new WorkerHandler(), new DeploymentOptions().setWorkerPoolSize(2).setWorkerPoolName("workerrrrr"));
+//        vertx.deployVerticle(new WorkerHandler(), new DeploymentOptions().setWorkerPoolSize(2).setWorkerPoolName("workerrrrr"));
+                vertx.deployVerticle(new BlockingWorker(),new DeploymentOptions().setWorker(true));
+
+
     }
 }
